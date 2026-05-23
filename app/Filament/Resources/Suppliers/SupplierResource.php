@@ -62,9 +62,10 @@ class SupplierResource extends Resource
                     ->rows(3),
 
                 FileUpload::make('image')
-                    ->label('Logo Perusahaan')
+                    ->label('Foto Logo Perusahaan')
                     ->image()
-                    ->directory('suppliers')
+                    ->disk('public')
+                    ->directory('Suppiers')
                     ->visibility('public')
                     ->required(),
             ]);

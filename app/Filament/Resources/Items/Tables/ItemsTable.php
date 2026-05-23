@@ -23,7 +23,7 @@ class ItemsTable
                     ->circular(),
 
                 TextColumn::make('kode_barang')
-                    ->label('Kode')
+                    ->label('Kode Barang')
                     ->searchable()
                     ->sortable(),
 
@@ -35,7 +35,9 @@ class ItemsTable
                 TextColumn::make('stok')
                     ->label('Stok')
                     ->numeric()
-                    ->sortable(),
+                    ->sortable()
+                    ->badge()
+                    ->color(fn ($state) => $state <= 5 ? 'danger' : 'success'),
 
                 TextColumn::make('harga')
                     ->label('Harga')
@@ -54,20 +56,22 @@ class ItemsTable
 
                 TextColumn::make('lokasi')
                     ->label('Lokasi')
-                    ->badge(),
+                    ->badge()
+                    ->color('info'),
 
                 TextColumn::make('user.name')
                     ->label('Ditambahkan Oleh')
-                    ->searchable(),
+                    ->searchable()
+                    ->sortable(),
 
                 TextColumn::make('created_at')
-                    ->label('Tanggal')
+                    ->label('Tanggal Ditambahkan')
                     ->dateTime('d M Y')
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
 
                 TextColumn::make('updated_at')
-                    ->label('Diupdate')
+                    ->label('Terakhir Diupdate')
                     ->dateTime('d M Y')
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),

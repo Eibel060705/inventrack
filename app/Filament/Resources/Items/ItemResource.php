@@ -85,6 +85,7 @@ class ItemResource extends Resource
                 FileUpload::make('image')
                     ->label('Foto Barang')
                     ->image()
+                    ->disk('public')
                     ->directory('items')
                     ->visibility('public')
                     ->required(),

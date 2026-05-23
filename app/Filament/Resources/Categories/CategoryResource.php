@@ -45,6 +45,7 @@ class CategoryResource extends Resource
                 FileUpload::make('image')
                     ->label('Foto Kategori')
                     ->image()
+                    ->disk('public')
                     ->directory('categories')
                     ->visibility('public')
                     ->required(),
